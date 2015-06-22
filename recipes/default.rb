@@ -73,9 +73,14 @@ when "rhel"
       "http://packages.treasuredata.com/2/redhat/$releasever/$basearch"
     end
 
+  yum_key "GPG-KEY-td-agent" do
+    url "http://packages.treasuredata.com/GPG-KEY-td-agent"
+    action :add
+  end
+
   yum_repository "treasure-data" do
     url source
-    gpgkey "https://packages.treasuredata.com/GPG-KEY-td-agent"
+    key "GPG-KEY-td-agent"
     action :add
   end
 end
