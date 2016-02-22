@@ -28,6 +28,8 @@ attribute :options,        :kind_of => String
 attribute :gem_binary,     :kind_of => String, :default => ""
 attribute :response_file,  :kind_of => String
 attribute :plugin,         :kind_of => [TrueClass, FalseClass], :default => false
+attribute :clear_sources,  :kind_of => [TrueClass, FalseClass]
+attribute :timeout,         kind_of: Integer, default: 300
 
 
 def initialize(*args)
